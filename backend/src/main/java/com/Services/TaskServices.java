@@ -20,4 +20,8 @@ public interface TaskServices {
     public List<Task> getTasksBySprint(Integer sprintId)throws SprintException;
     
     public List<Task> getTasksByAssignee(String assignee);
+    
+    public String deleteTask(Integer taskId)throws TaskException;
+    
+    public String deleteSprint(Integer sprintId)throws SprintException;
 }

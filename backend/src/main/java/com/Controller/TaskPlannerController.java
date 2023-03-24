@@ -3,6 +3,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -58,5 +59,17 @@ public class TaskPlannerController {
     @GetMapping("/tasks/assignee")
     public ResponseEntity<List<Task>> getTasksByAssignee(@RequestParam("assignee") String assignee) {
         return new ResponseEntity<List<Task>>(taskServices.getTasksByAssignee(assignee),HttpStatus.OK);
+    }
+    
+    //delete task
+    @DeleteMapping("/tasks/{taskId}")
+    public ResponseEntity<String> deleteTask(@PathVariable Integer taskId) throws TaskException{
+    	return new ResponseEntity<String>(taskServices.deleteTask(taskId),HttpStatus.OK);
+    }
+    
+  //delete sprint
+    @DeleteMapping("/sprints/{sprintId}")
+    public ResponseEntity<String> deleteSprint(@PathVariable Integer sprintId) throws SprintException{
+    	return new ResponseEntity<String>( taskServices.deleteSprint(sprintId),HttpStatus.OK);
     }
 }
