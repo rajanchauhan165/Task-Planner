@@ -1,4 +1,6 @@
 package com.Entities;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,6 +19,7 @@ public class Task {
     private String assignee;
     private String status;
     
+//    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "sprint_id")
     private Sprint sprint;
@@ -72,8 +75,8 @@ public class Task {
 		this.status = status;
 	}
 
-	public Sprint getSprint() {
-		return sprint;
+	public Integer getSprint() {
+		return sprint.getSprintId();
 	}
 
 	public void setSprint(Sprint sprint) {

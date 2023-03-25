@@ -79,5 +79,10 @@ public class TaskServicesImplementation implements TaskServices{
 			throw new SprintException("No Sprint found with id "+sprintId);
 		}
 	}
+
+	@Override
+	public List<Sprint> getAllSprints() {
+		return sprintRepo.findAll();
+	}
 	
 }

@@ -72,4 +72,9 @@ public class TaskPlannerController {
     public ResponseEntity<String> deleteSprint(@PathVariable Integer sprintId) throws SprintException{
     	return new ResponseEntity<String>( taskServices.deleteSprint(sprintId),HttpStatus.OK);
     }
+    
+    @GetMapping("/sprints")
+    public ResponseEntity<List<Sprint>> getAllSprint(){
+    	return new ResponseEntity<List<Sprint>>(taskServices.getAllSprints(),HttpStatus.OK);
+    }
 }

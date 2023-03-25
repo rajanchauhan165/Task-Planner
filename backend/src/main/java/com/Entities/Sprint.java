@@ -19,7 +19,7 @@ public class Sprint {
     
     private String name;
     
-    @JsonIgnore
+    
     @OneToMany(mappedBy = "sprint", cascade = CascadeType.ALL)
     private List<Task> tasks = new ArrayList<>();
 

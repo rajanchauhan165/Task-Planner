@@ -24,4 +24,6 @@ public interface TaskServices {
     public String deleteTask(Integer taskId)throws TaskException;
     
     public String deleteSprint(Integer sprintId)throws SprintException;
+    
+    public List<Sprint> getAllSprints();
 }

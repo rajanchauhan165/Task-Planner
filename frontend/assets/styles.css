@@ -1,24 +1,18 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: rgb(48, 48, 48);
+    background-color: rgb(10, 10, 10);
     font-family:Arial, Helvetica, sans-serif;
 }
 
 .navbar{
-    /* border: 1px solid red; */
     height: 60px;
-    box-shadow: 0px 2px 3px rgba(255, 255, 255, 0.033),
-                0px 4px 6px rgba(254, 254, 254, 0.033),
-                0px 7px 9px rgba(255, 252, 252, 0.033),
-                0px 15px 17px rgba(255, 255, 255, 0.033),
-                0px 22px 34px rgba(252, 249, 249, 0.033),
-                0px 50px 80px rgba(250, 248, 248, 0.033);
-
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 15px;
     display: flex;
     justify-content: space-between;
     align-items:center;
     padding: 0 25px 0 25px;
+    background-color: black;
 }
 
 .logotext{
@@ -56,14 +50,15 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 24px;
-    font-weight: 600;
+    font-size: 22px;
+    font-weight: 200;
 }
 
 .buttons>a{
-    color: rgb(48, 48, 48);
+    color: rgb(182, 178, 178);
     text-decoration: none;
-    background-color: white;
+    background-color: rgb(4, 4, 4);
     border-radius: 5px;
-    padding: 0 10px 0 10px;
+    padding: 5px 15px 5px 15px;
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 10px;
 }
