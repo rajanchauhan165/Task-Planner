@@ -10,6 +10,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Sprint {
@@ -17,7 +18,8 @@ public class Sprint {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer sprintId;
     
-    private String name;
+    @NotNull(message = "Sprint name cannot be null")
+	private String name;
     
     
     @OneToMany(mappedBy = "sprint", cascade = CascadeType.ALL)
@@ -25,7 +27,16 @@ public class Sprint {
 
     
     
-    //getters and setters below this line
+    public Sprint(Integer sprintId, String name, List<Task> tasks) {
+		this.sprintId = sprintId;
+		this.name = name;
+		this.tasks = tasks;
+	}
+
+	public Sprint() {
+	}
+
+	//getters and setters below this line
     public Integer getSprintId() {
 		return sprintId;
 	}
@@ -50,4 +61,11 @@ public class Sprint {
 		this.tasks = tasks;
 	}
     //getters and setters above this line
+
+	@Override
+	public String toString() {
+		return "Sprint [sprintId=" + sprintId + ", name=" + name + ", tasks=" + tasks + "]";
+	}
+	
+	
 }

@@ -7,16 +7,25 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Task {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+	
+	@NotNull(message = "Type cannot be null")
     private String type;
+	
+	@NotNull(message = "Name of task cannot be null")
     private String name;
     private String description;
+    
+    @NotNull(message = "There must be a assignee for this task")
     private String assignee;
+    
+    @NotNull(message = "Status cannot be null")
     private String status;
     
 //    @JsonIgnore
@@ -26,7 +35,20 @@ public class Task {
     
     
     
-  //getters and setters below this line
+    public Task(Integer id, String type, String name, String description, String assignee, String status, Sprint sprint) {
+	this.id = id;
+	this.type = type;
+	this.name = name;
+	this.description = description;
+	this.assignee = assignee;
+	this.status = status;
+	this.sprint = sprint;
+}
+
+	public Task() {
+	}
+
+	//getters and setters below this line
     public Integer getId() {
 		return id;
 	}
@@ -83,4 +105,12 @@ public class Task {
 		this.sprint = sprint;
 	}
   //getters and setters above this line
+
+	@Override
+	public String toString() {
+		return "Task [id=" + id + ", type=" + type + ", name=" + name + ", description=" + description + ", assignee="
+				+ assignee + ", status=" + status + ", sprint=" + sprint + "]";
+	}
+	
+	
 }

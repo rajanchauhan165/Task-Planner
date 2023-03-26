@@ -77,4 +77,5 @@ public class TaskPlannerController {
     public ResponseEntity<List<Sprint>> getAllSprint(){
     	return new ResponseEntity<List<Sprint>>(taskServices.getAllSprints(),HttpStatus.OK);
     }
+    
 }
