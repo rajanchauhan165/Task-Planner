@@ -6,7 +6,7 @@ Backend of a taskplanner where user can add sprints, add tasks to sprint, change
 
 ## Run
 
-[Deployed Link (Click Here)](https://linktodocumentation)
+[Railway Cloud Deployed Link (Click Here)](https://task-planner-production.up.railway.app/swagger-ui/index.html)
 
 OR 
 
